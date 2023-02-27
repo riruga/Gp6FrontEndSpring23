@@ -1,23 +1,24 @@
-import './App.css'
-
 function ProductRow({ product }) {
+
   function handleRemoveClick(){
-    
+    document.getElementById(product.name).style.visibility = "hidden";
   }
 
-  function handleAddQuantityClick({product}){
-    product++
+  function handleAddQuantityClick(){
+    product.amount++;
+    document.getElementById(product.name + "amount").innerHTML = product.amount + " stk";
   }
-  function handleRemoveQuantityClick({product}){
-    product--
+  function handleRemoveQuantityClick(){
+    product.amount--;
+    document.getElementById(product.name + "amount").innerHTML = product.amount + " stk";
   }
   return (
-    <tr>
+    <tr id = {product.name}>
       <h1>{product.name + " "}</h1>
       <tr>
-        <td><button onClick={handleAddQuantityClick(product.amount)}>+</button></td>
-        <h4>{product.amount + " stk"}</h4>
-        <td><button onClick={handleRemoveQuantityClick(product.amount)}>-</button></td>
+        <td><button onClick={handleAddQuantityClick}>+</button></td>
+        <h4 id = {product.name + "amount"}>{product.amount + " stk"}</h4>
+        <td><button onClick={handleRemoveQuantityClick}>-</button></td>
       </tr>
       <td><h2>{product.price}</h2></td>
       <td><button onClick={handleRemoveClick}>🗑️</button></td>
