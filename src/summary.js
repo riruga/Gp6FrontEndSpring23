@@ -10,9 +10,10 @@ export default function Summary(){
     )
   }
   
+  //need to remove centering once its included in css
   function Title(){
     return(
-    <div><h1>Ordreoversigt</h1></div>
+    <div><h1><center>Ordreoversigt</center></h1></div>
     )
   }
   function Subtotal(){
