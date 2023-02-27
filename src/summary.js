@@ -63,7 +63,7 @@ export default function Summary(){
     let totalPrice = prodcutPrice + deliveryPrice
     let total = "Pris i alt: " + totalPrice
     return(
-      <div><h1>{total}</h1></div>
+        <div><h1>{total}</h1><button>Til kassen</button></div>
     )
   }
   
